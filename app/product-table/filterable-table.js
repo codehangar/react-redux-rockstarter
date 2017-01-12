@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { filterTable } from '../actions';
+import { filterTable } from './filterable-table.actions';
 import ProductTable from './product-table';
 import { filterableTable } from '../styles/filterableTable.scss';
 
