@@ -9,7 +9,7 @@ var StatsPlugin = require('stats-webpack-plugin');
 module.exports = {
     // The entry file. All your app roots fromn here.
     entry: [
-        path.join(__dirname, 'app/index.js')
+        path.join(__dirname, 'app/filterable-table.actions.js')
     ],
     // Where you want the output to go
     output: {

@@ -1,6 +1,6 @@
 import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
-import * as types from '../actions/types';
+import * as types from './action-types';
 
 const filter = (state = '', action) => {
     switch (action.type) {
