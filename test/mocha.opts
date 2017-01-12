@@ -1,0 +1,4 @@
+test
+./app/**/*.spec.js
+-R spec
+-u bdd
