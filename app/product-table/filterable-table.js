@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { filterTable } from './filterable-table.actions';
 import ProductTable from './product-table';
-import { filterableTable } from '../styles/filterableTable.scss';
+import { filterableTable } from './filterable-table.scss';
 
 const FilterableTable = ({ filter, onFilter }) => {
     let input;
