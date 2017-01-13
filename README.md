@@ -13,6 +13,7 @@ Contains:
 * a webpack production config so you can build the app and make it ready for production
 * Sass support, just import your styles wherever you need them
 * eslint to keep your js readable
+* mocha/chai unit testing and istanbul code coverage
 * much more...
 
 
