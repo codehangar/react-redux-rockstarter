@@ -1,0 +1,15 @@
+.header {
+    a {
+        text-decoration: none;
+    }
+
+    a.active {
+        span {
+            color: rgb(0, 188, 212) !important;
+        }
+
+        svg {
+            fill: rgb(0, 188, 212) !important;
+        }
+    }
+}
