@@ -3,18 +3,21 @@ import { connect } from 'react-redux';
 import { filterTable } from './filterable-table.actions';
 import ProductTable from './product-table';
 import { filterableTable } from './filterable-table.scss';
+import { container } from '../styles/main.scss';
+import TextField from 'material-ui/TextField';
 
 const FilterableTable = ({ filter, onFilter }) => {
-    let input;
+    const handleInput = (event) => {
+        onFilter(event.target.value);
+    };
 
     return (
-        <div className={filterableTable}>
-            <input
+        <div className={`${container} ${filterableTable}`}>
+            <TextField
                 value={filter}
-                ref={node => {input = node;}}
-                onChange={() => onFilter(input.value)} />
-
-            <ProductTable filter={filter} />
+                hintText="Enter Text"
+                onChange={handleInput}/>
+            <ProductTable filter={filter}/>
         </div>
     );
 };

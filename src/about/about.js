@@ -1,15 +1,13 @@
 import React from 'react';
+import DatePicker from 'material-ui/DatePicker';
+import { container } from '../styles/main.scss';
 
 const About = () =>
-    <div>
-        Hey! Thanks for using this example. If you like it, consider starring the repo :))
+    <div className={container}>
+        <h3>About... with datepickers?</h3>
         <div>
-            <iframe
-                src="https://ghbtns.com/github-btn.html?user=jpsierens&repo=webpack-react-redux&type=star&size=large"
-                frameBorder="0"
-                allowTransparency="true"
-                scrolling="0">
-            </iframe>
+            <DatePicker hintText="Portrait Dialog"/>
+            <DatePicker hintText="Landscape Dialog" mode="landscape"/>
         </div>
     </div>;
 

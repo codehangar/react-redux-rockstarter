@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import DatePicker from 'material-ui/DatePicker';
-import LinearProgress from 'material-ui/LinearProgress';
-
+import CircularProgress from 'material-ui/CircularProgress';
+import Paper from 'material-ui/Paper';
+import { List, ListItem } from 'material-ui/List';
+import { container } from '../styles/main.scss';
 import { fetchPeople } from './people.actions';
 
 class People extends React.Component {
@@ -19,23 +20,27 @@ class People extends React.Component {
 
         let peopleList;
         if (loading) {
-            peopleList = <LinearProgress mode="indeterminate"/>;
+            peopleList = (
+                <div style={{ textAlign: 'center' }}>
+                    <CircularProgress size={80} thickness={5}/>
+                </div>
+            );
         } else {
             peopleList = people.map((person, i) => {
                 return (
-                    <div key={i}>{person.name}</div>
+                    <ListItem key={i} primaryText={person.name}/>
                 );
             });
         }
 
         return (
-            <div>
+            <div className={container}>
                 <h3>Star Wars People</h3>
-                {peopleList}
-                <div>
-                    <DatePicker hintText="Portrait Dialog"/>
-                    <DatePicker hintText="Landscape Dialog" mode="landscape"/>
-                </div>
+                <Paper zDepth={1}>
+                    <List>
+                        {peopleList}
+                    </List>
+                </Paper>
             </div>
         );
     }
