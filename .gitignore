@@ -11,3 +11,6 @@ npm-debug.log
 # IDEA (WebStorm) Project Settings
 .idea/**
 !.idea/codeStyleSettings.xml
+
+# Distribution Build files
+dist/

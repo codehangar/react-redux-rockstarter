@@ -12,7 +12,7 @@ const App = ({ children }) =>
           <IndexLink to="/" activeStyle={{ color: 'red' }}>Filterable Table</IndexLink>
           <Link to="/about" activeStyle={{ color: 'red' }}>About</Link>
           <Link to="/about/lower" activeStyle={{ color: 'red' }}>About</Link>
-          <Link to="/new/1" activeStyle={{ color: 'red' }}>New Route</Link>
+          <Link to="/people" activeStyle={{ color: 'red' }}>People</Link>
         </footer>
     </div>;
 

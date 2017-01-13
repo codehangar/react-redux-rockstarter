@@ -125,7 +125,10 @@
       }
     ],                               // http://eslint.org/docs/rules/brace-style
     "quotes": [
-      2, "single", "avoid-escape"    // http://eslint.org/docs/rules/quotes
+      2, "single", {                 // http://eslint.org/docs/rules/quotes
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
     ],
     "camelcase": [2, {               // http://eslint.org/docs/rules/camelcase
       "properties": "never"
