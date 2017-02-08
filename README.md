@@ -16,6 +16,10 @@ Contains:
 * mocha/chai unit testing and istanbul code coverage
 * much more...
 
+## UI Resources
+- [Gx](http://jxnblk.com/gx/) minimal responsive grid system
+- [react-flexbox-grid](https://github.com/roylee0704/react-flexbox-grid)
+
 
 ## Run the app
 
