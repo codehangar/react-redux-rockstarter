@@ -22,6 +22,7 @@
     "classnames": "^2.2.5",
     "file-loader": "^0.9.0",
     "flexboxgrid": "^6.3.1",
+    "gx": "^1.0.0-rc3",
     "material-ui": "^0.16.6",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
