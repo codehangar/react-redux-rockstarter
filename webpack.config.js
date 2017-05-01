@@ -1,8 +1,8 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path              = require('path');
+const webpack           = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -19,51 +19,59 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-          template: 'src/index.tpl.html',
-          inject: 'body',
-          filename: 'index.html'
+            template: 'src/index.tpl.html',
+            inject: 'body',
+            filename: 'index.html'
         }),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify('development')
+        }),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                eslint: {
+                    configFile: '.eslintrc',
+                    failOnWarning: false,
+                    failOnError: false
+                }
+            }
         })
     ],
-    eslint: {
-        configFile: '.eslintrc',
-        failOnWarning: false,
-        failOnError: false
-    },
     module: {
-        preLoaders: [
+        loaders: [
             {
+                enforce: 'pre',
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'eslint'
-            }
-        ],
-        loaders: [
+                loader: 'eslint-loader'
+            },
             {
                 test: /\.js?$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel-loader'
             },
             {
                 test: /\.json?$/,
-                loader: 'json'
+                loader: 'json-loader'
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass',
+                loader: 'style-loader!css-loader?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass-loader',
             },
             {
                 test: /\.css$/,
-                loader: 'style!css?modules',
-                include: /flexboxgrid/,
+                loader: 'style-loader!css-loader?modules'
             },
-            { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
-            { test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/, loader: 'file' }
+            {
+                test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+            },
+            {
+                test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/,
+                loader: 'file-loader'
+            }
         ]
     }
 };

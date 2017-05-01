@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
+import { push } from 'connected-react-router';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import Paper from 'material-ui/Paper';
-import FontIcon from 'material-ui/FontIcon';
-import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+import FontIcon from 'material-ui/svg-icons/content/filter-list';
+import IconLocationOn from 'material-ui/svg-icons/social/person';
 import IconPeople from 'material-ui/svg-icons/social/people';
 import { footer } from './footer.scss';
 
@@ -61,14 +62,13 @@ Footer.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        route: state.routing.locationBeforeTransitions && state.routing.locationBeforeTransitions.pathname,
+        route: state.router.location.pathname,
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         to: (path) => {
-            console.log('path', path); // eslint-disable-line no-console
             dispatch(push(path));
         }
     };
