@@ -1,0 +1,37 @@
+## Customize the test machine
+machine:
+  # Version of node to use
+  node:
+    version: 6.10.3
+
+## Use yarn to use exact package versions
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+
+## Customize general stuff
+general:
+  artifacts:
+    - "$CIRCLE_ARTIFACTS/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
+
+compile:
+
+## Customize test commands
+test:
+  override:
+    - yarn run test-circle:
+        environment:
+          MOCHA_FILE: $CIRCLE_TEST_REPORTS/junit/test-results.xml
+  post:
+    - yarn run test-coverage
+    # Move the coverage report to the artifacts folder
+    - mv coverage/ $CIRCLE_ARTIFACTS/coverage
+    - tar -C dist -cvf $CIRCLE_ARTIFACTS/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar .
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./deploy-master.sh
