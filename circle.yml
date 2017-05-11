@@ -11,12 +11,9 @@ dependencies:
   cache_directories:
     - ~/.cache/yarn
 
-## Customize general stuff
-general:
-  artifacts:
-    - "$CIRCLE_ARTIFACTS/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
-
-#compile:
+compile:
+  override:
+    - yarn run build
 
 ## Customize test commands
 test:
@@ -28,6 +25,7 @@ test:
     - yarn run test-coverage
     # Move the coverage report to the artifacts folder
     - mv coverage/ $CIRCLE_ARTIFACTS/coverage
+    # Create a tar ball artifact
     - tar -C dist -cvf $CIRCLE_ARTIFACTS/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar .
 
 deployment:
