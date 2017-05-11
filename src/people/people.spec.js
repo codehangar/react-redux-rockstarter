@@ -1,4 +1,4 @@
-import * as reducer from './people.reducer';
+import reducer from './people.reducer';
 import * as types from '../action-types';
 
 describe('people reducer', () => {
@@ -7,7 +7,7 @@ describe('people reducer', () => {
     });
 
     it('should set initialState', () => {
-        let nextState = reducer.people(void 0, {});
+        let nextState = reducer(void 0, {});
         expect(nextState).to.deep.equal({
             loading: false
         });
@@ -22,7 +22,7 @@ describe('people reducer', () => {
             type: types.RECEIVE_PEOPLE,
             data: data
         };
-        let nextState = reducer.people(state, action);
+        let nextState = reducer(state, action);
 
         expect(nextState).to.deep.equal({
             loading: false,
