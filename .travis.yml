@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- 6.10.2
+install:
+- npm install
+cache:
+  directories:
+  - node_modules
+notifications:
+  slack:
+    rooms:
+      secure: g4oEsc1cH5TRg5+A8VKf0yZ1Y8vYTG6TmeXDXuqmp9t0/qkrWdEtaLt2V/4si88B7Jt1hAyNsKkSzD4HjWay4nsu4SpD4E7/Z3OQhygBazW4BZTiUVY21mrm9N19z7rlO1xcfCIYAUbdj/xLNFAqm0h5bxfmVtPcNvNJlyhdRGM3y3HKEhT9mFsY6WaZuTRrr1FMxwJ79Ry6UsX3Rs7wp0cDnOBRoX1pPIfvteh67eFlCtSTt4ims9qY45kGgqbf2mzCZhrhxxr7ByiuOL43wnO/BcUoT6zLREY3AfoZ6GMaiLb53kxDIkNbkZ4pXT/LWvpxrkezMQzP9Nyui9Eqgx1iKDgPHD78gsGwc8AVv4ADZd+r2BhET82wOGts7MD2SKbqPBQOMSXfGBsDhS1WEqK6WFGUz3RZA2S31NQ/NUyfq9S609+ZLWn9XKdMKMxaJXHh4uslp9MEFpJ91QGRRcTft8DJY0GcMSnkX9+TUWP1d4bC3+OhDf9IJgLeENHWx65DxzryvMV4cEXZaY8IwvuvidK6Y+TCnY+ISvj0jn0tGr8V1OUNlSOdo8+whIwI6ERJmBeyhNY8ICqFEpMK88uvq8sEksXYgFjOil8FxWST1q7CRd6+qfqDmIpwmiaJgjj/w2b5/ndH1i0JuubENubxji7zBeZk1GzS6oI/Nqo=
