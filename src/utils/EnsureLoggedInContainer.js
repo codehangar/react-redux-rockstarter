@@ -42,7 +42,8 @@ EnsureLoggedInContainer.propTypes = {
 
 function mapStateToProps(state) {
     return {
-        isLoggedIn: !!state.auth.user,
+        // TODO: remove || true when ready
+        isLoggedIn: !!state.auth.user || true,
         currentURL: state.router.location.pathname
     };
 }
