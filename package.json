@@ -1,7 +1,7 @@
 {
   "name": "react-redux-rockstarter",
   "version": "1.0.0",
-  "engine": "node 6.9.2",
+  "engine": "node 6.10.2",
   "description": "A boilerplate for rocking out with react, redux and react-router with the help of webpack.",
   "main": "index.js",
   "scripts": {
@@ -30,6 +30,7 @@
     "react-hot-loader": "^3.0.0-beta.2",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.2.0",

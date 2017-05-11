@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/main.scss';
 import { app, content } from '../styles/main.scss';
-// import Header from '../header/header.js';
+import Header from '../header/header.js';
 import Footer from '../footer/footer';
 
 const App = ({ children }) =>
     <div className={app}>
-        {/* <Header/> */}
+        <Header/>
         <div className={content}>
             { children }
         </div>

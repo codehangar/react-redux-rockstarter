@@ -5,7 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import FontIcon from 'material-ui/FontIcon';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 import IconPeople from 'material-ui/svg-icons/social/people';
-import { IndexLink, Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { header, active } from './header.scss';
 
 const tableIcon  = <FontIcon className="material-icons">restore</FontIcon>;
@@ -34,20 +34,20 @@ class Header extends Component {
                     open={this.state.open}
                     onRequestChange={(open) => this.setState({ open })}
                 >
-                    <IndexLink to="/" activeClassName={active}>
+                    <NavLink to="/" activeClassName={active}>
                         <MenuItem onTouchTap={this.handleClose} leftIcon={tableIcon}>
                             Filterable Table
                         </MenuItem>
-                    </IndexLink>
-                    <Link to="/about/" activeClassName={active}>
+                    </NavLink>
+                    <NavLink to="/about/" activeClassName={active}>
                         <MenuItem onTouchTap={this.handleClose} leftIcon={aboutIcon}>About</MenuItem>
-                    </Link>
-                    <Link to="/about/lower" activeClassName={active}>
+                    </NavLink>
+                    <NavLink to="/about/lower" activeClassName={active}>
                         <MenuItem onTouchTap={this.handleClose} leftIcon={aboutIcon}>About Lower</MenuItem>
-                    </Link>
-                    <Link to="/people" activeClassName={active}>
+                    </NavLink>
+                    <NavLink to="/people" activeClassName={active}>
                         <MenuItem onTouchTap={this.handleClose} leftIcon={peopleIcon}>People</MenuItem>
-                    </Link>
+                    </NavLink>
                     <MenuItem onTouchTap={this.handleClose}>Close</MenuItem>
                 </Drawer>
             </div>

@@ -5,7 +5,7 @@ const initialState = {
     loading: false
 };
 
-export function people(state = initialState, action) {
+export default function(state = initialState, action) {
     switch (action.type) {
         case types.FETCH_PEOPLE:
             return {
