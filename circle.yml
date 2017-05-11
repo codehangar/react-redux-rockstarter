@@ -16,7 +16,7 @@ general:
   artifacts:
     - "$CIRCLE_ARTIFACTS/$CIRCLE_PROJECT_REPONAME-$CIRCLE_BRANCH-$CIRCLE_BUILD_NUM.tar" # relative to the build directory
 
-compile:
+#compile:
 
 ## Customize test commands
 test:
